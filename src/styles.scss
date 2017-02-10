@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+a {
+  color: #4078c0;
+  text-decoration: none;
+  transition: color ease-out .15s
+}
+
+a:hover {
+  color: #000;
+}
+
+.page-content {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1280px;
+}
