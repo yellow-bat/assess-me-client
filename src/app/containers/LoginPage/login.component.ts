@@ -9,8 +9,7 @@ export interface ICreds {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  providers: [UserService]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   model: ICreds = {

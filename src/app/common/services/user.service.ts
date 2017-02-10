@@ -31,13 +31,11 @@ export class UserService {
 
       if (isLogged) localStorage.setItem(TOKEN_KEY_NAME, 'key');
 
-      console.log('isLogged: ', isLogged);
       this.isAuthenticated.next(isLogged);
       resolve();
     });
   };
 
-  constructor() {
-  }
+  constructor() {}
 
 }

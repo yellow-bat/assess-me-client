@@ -11,6 +11,8 @@ import { FooterComponent } from './common/components/footer/footer.component';
 import { RegisterComponent } from './containers/RegisterPage/register.component';
 import { LoginComponent } from './containers/LoginPage/login.component';
 
+import { UserService } from './common/services/user.service';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -40,7 +42,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }
