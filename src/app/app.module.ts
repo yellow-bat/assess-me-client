@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LandingComponent } from './containers/LandingPage/landing.component';
-import { LayoutComponent } from './common/layout/layout.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
+import { LayoutComponent } from './common/components/layout/layout.component';
+import { HeaderComponent } from './common/components/header/header.component';
+import { FooterComponent } from './common/components/footer/footer.component';
 import { RegisterComponent } from './containers/RegisterPage/register.component';
+import { LoginComponent } from './containers/LoginPage/login.component';
 
 const appRoutes: Routes = [
   {
@@ -18,7 +19,10 @@ const appRoutes: Routes = [
   },{
     path: 'register',
     component: RegisterComponent,
-  },
+  },{
+    path: 'login',
+    component: LoginComponent,
+  }
 ];
 
 @NgModule({
@@ -27,7 +31,8 @@ const appRoutes: Routes = [
     LandingComponent,
     FooterComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

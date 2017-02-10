@@ -1,0 +1,21 @@
+
+<div class="login-form">
+  <h1>Sign in to Assess</h1>
+  <div class="block block-white">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <input type="text" id="login"
+             required
+             [(ngModel)]="model.login" name="login"
+             #login="ngModel">
+
+      <input type="text" id="password"
+             required
+             [(ngModel)]="model.password" name="password"
+             #password="ngModel">
+
+      <input type="submit" value="Login" class="button green">
+    </form>
+  </div>
+</div>
+
+

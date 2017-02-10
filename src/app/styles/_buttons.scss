@@ -1,0 +1,14 @@
+.button {
+  width: 100%;
+  display: block;
+  line-height: 20px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+
+  &.green {
+    color: #fff;
+    background: #85d063;
+  }
+}
+
