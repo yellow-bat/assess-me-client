@@ -14,12 +14,12 @@ export interface ICreds {
 })
 export class LoginComponent implements OnInit {
   model: ICreds = {
-    login: '1',
-    password: '2'
+    login: '',
+    password: ''
   };
 
   onSubmit(): void {
-    this.userService.login('111', '222');
+    this.userService.login(this.model);
   };
 
   constructor(private userService: UserService) {}
