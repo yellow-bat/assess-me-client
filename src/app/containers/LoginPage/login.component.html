@@ -4,11 +4,13 @@
   <div class="block block-white">
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <input type="text" id="login"
+             placeholder="Login"
              required
              [(ngModel)]="model.login" name="login"
              #login="ngModel">
 
-      <input type="text" id="password"
+      <input type="password" id="password"
+             placeholder="Password"
              required
              [(ngModel)]="model.password" name="password"
              #password="ngModel">

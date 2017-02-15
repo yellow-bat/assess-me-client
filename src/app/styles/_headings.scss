@@ -1,4 +1,5 @@
-h1 {
-  color: #333;
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-gray;
   text-align: center;
+  font-family: $font-serif;
 }

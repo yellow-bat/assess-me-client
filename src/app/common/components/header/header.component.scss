@@ -1,19 +1,37 @@
+@import "../../../styles/variables";
+
 header {
   padding: 15px;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e5e5e5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: $dark-blue;
+  border-bottom: 1px solid $gray-border-color;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .logo {
-  color: #ccc;
+  color: $gray-border-color;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: 2px;
+
+  span {
+    color: $orange-light;
+  }
 }
 
 nav a {
   margin: 0 5px;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid $dark-gray;
+  font-size: .8rem;
+  color: $global-background-color;
+  transition: border-color ease-in-out .25s;
+
+  &:hover {
+    border-color: $gray-border-color;
+  }
 }

@@ -1,6 +1,8 @@
 <header>
-  <a routerLink="/" class="logo">Assess.ME</a>
-  <nav>
-    <a *ngFor="let item of menu" routerLink="{{item.url}}">{{item.label}}</a>
-  </nav>
+  <div class="container">
+      <a routerLink="/" class="logo">Assess.<span>me</span></a>
+      <nav>
+        <a *ngFor="let item of menu" routerLink="{{item.url}}">{{item.label}}</a>
+      </nav>
+  </div>
 </header>

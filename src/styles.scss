@@ -1,3 +1,4 @@
+@import "app/styles/variables";
 @import "app/styles/buttons";
 @import "app/styles/forms";
 @import "app/styles/headings";
@@ -9,33 +10,39 @@
 
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  background: $global-background-color;
 }
 
 a {
-  color: #4078c0;
+  color: $blue;
   text-decoration: none;
   transition: color ease-out .15s
 }
 
 a:hover {
-  color: #000;
+  color: $dark-gray;
+}
+
+.container {
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
 }
 
 .page-content {
   margin: 0 auto;
   padding: 20px;
-  max-width: 1280px;
 }
 
 .block {
-  border: 1px solid #d8dee2;
+  border: 1px solid $gray-border-color;
   border-radius: 5px;
   display: block;
   padding: 20px;
 }
 
 .block-white {
-  background: #fff;
+  background: $white;
 }
