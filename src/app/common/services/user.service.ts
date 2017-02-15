@@ -22,18 +22,15 @@ export class UserService {
     });
   }
 
-  login(creds: ICreds): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const isLogged = users.some((item: ICreds) => {
-        return item.login === creds.login && item.password === creds.password;
-      });
-
-
-      if (isLogged) localStorage.setItem(TOKEN_KEY_NAME, 'key');
-
-      this.isAuthenticated.next(isLogged);
-      resolve();
+  login(creds: ICreds): void {
+    const isLogged = users.some((item: ICreds) => {
+      return item.login === creds.login && item.password === creds.password;
     });
+
+
+    if (isLogged) localStorage.setItem(TOKEN_KEY_NAME, 'key');
+
+    this.isAuthenticated.next(isLogged);
   };
 
   constructor() {}

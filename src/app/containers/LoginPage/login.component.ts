@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../common/services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
+import {UserService} from '../../common/services/user.service';
 
 export interface ICreds {
   login: string;
@@ -21,8 +23,15 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.model);
   };
 
-  constructor(private userService: UserService) {}
+  authHandler: (isAuthenticated: boolean) => void = (isAuthenticated: boolean) => {
+    if (isAuthenticated) this.router.navigateByUrl('/');
+  };
+
+  constructor(private userService: UserService, private router: Router) {
+  }
 
   ngOnInit() {
+
+    this.userService.isAuthenticated.subscribe(this.authHandler)
   }
 }

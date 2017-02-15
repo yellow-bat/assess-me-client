@@ -2,7 +2,9 @@
   <div class="container">
       <a routerLink="/" class="logo">Assess.<span>me</span></a>
       <nav>
-        <a *ngFor="let item of menu" routerLink="{{item.url}}">{{item.label}}</a>
+        <a routerLink="/login" *ngIf="!isAuthenticated">Sign In</a>
+        <a routerLink="/register" *ngIf="!isAuthenticated">Register</a>
+        <a *ngIf="isAuthenticated" (click)="logoutClick()">Logout</a>
       </nav>
   </div>
 </header>

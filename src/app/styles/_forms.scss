@@ -1,9 +1,19 @@
 input {
   width: 100%;
+  outline: none;
   height: 40px;
   padding: 10px;
   line-height: 20px;
   margin-bottom: 20px;
-  border: 1px solid $gray-border-color;
-  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid $dark-blue;
+  transition: border-color ease-out .25s;
+
+  &:last-child {
+    margin: 0
+  }
+
+  &:focus {
+    border-color: $orange-light;
+  }
 }
