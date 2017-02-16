@@ -12,6 +12,7 @@ import { RegisterComponent } from './containers/RegisterPage/register.component'
 import { LoginComponent } from './containers/LoginPage/login.component';
 
 import { UserService } from './common/services/user.service';
+import { TagInputComponent } from './common/components/tag-input/tag-input.component';
 
 const appRoutes: Routes = [
   {
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    TagInputComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

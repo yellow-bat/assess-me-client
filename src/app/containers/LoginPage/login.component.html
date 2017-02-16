@@ -1,19 +1,36 @@
-
 <div class="login-form">
   <h1>Sign in to Assess</h1>
   <div class="block block-white">
+    <!--<a href="https://github.com/login/oauth/authorize?client_id=84a422ecfe9e123e9ebd&scope=user:email" class="button with-icon dark">-->
+    <!--<i class="fa fa-github"></i>-->
+    <!--Login using Github-->
+    <!--</a>-->
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <input type="text" id="login"
-             placeholder="Login"
-             required
-             [(ngModel)]="model.login" name="login"
-             #login="ngModel">
 
-      <input type="password" id="password"
-             placeholder="Password"
-             required
-             [(ngModel)]="model.password" name="password"
-             #password="ngModel">
+      <div class="input-wrapper">
+        <div *ngIf="login.errors && (login.dirty || login.touched) && login.errors.required"
+             class="input-error">
+          Please provide login.
+        </div>
+        <input type="text" id="login"
+               placeholder="Login"
+               required
+               [ngClass]="{'error': login.errors && (login.dirty || login.touched) && login.errors.required}"
+               [(ngModel)]="model.login" name="login"
+               #login="ngModel">
+      </div>
+      <div class="input-wrapper">
+        <div *ngIf="password.errors && (password.dirty || password.touched) && password.errors.required"
+             class="input-error">
+          Please provide password.
+        </div>
+        <input type="password" id="password"
+               placeholder="Password"
+               required
+               [ngClass]="{'error': password.errors && (password.dirty || password.touched) && password.errors.required}"
+               [(ngModel)]="model.password" name="password"
+               #password="ngModel">
+      </div>
 
       <input type="submit" value="Login" class="button dark">
     </form>

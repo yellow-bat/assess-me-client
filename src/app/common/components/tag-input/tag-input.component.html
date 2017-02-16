@@ -1,0 +1,11 @@
+<div class="input-wrapper">
+  <div class="tags-list-input">
+    <div class="tag" *ngFor="let tag of tags.result" (click)="deleteTag(tag)">{{tag}}</div>
+  </div>
+
+  <input type="text"
+         [(ngModel)]="tags.string"
+         (keydown)="tagsUpdated($event)"
+         (blur)="tagsUpdated($event)"
+         placeholder="Javascript,.NET,Java">
+</div>

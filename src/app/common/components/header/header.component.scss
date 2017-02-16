@@ -22,9 +22,12 @@ header {
   }
 }
 
+
+
 nav a {
   margin: 0 5px;
   display: inline-block;
+  vertical-align: middle;
   padding: 10px;
   border: 1px solid $dark-gray;
   font-size: .8rem;
@@ -33,5 +36,16 @@ nav a {
 
   &:hover {
     border-color: $gray-border-color;
+  }
+
+  &.user-avatar {
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
   }
 }

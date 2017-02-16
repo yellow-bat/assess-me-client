@@ -5,6 +5,9 @@
         <a routerLink="/login" *ngIf="!isAuthenticated">Sign In</a>
         <a routerLink="/register" *ngIf="!isAuthenticated">Register</a>
         <a *ngIf="isAuthenticated" (click)="logoutClick()">Logout</a>
+        <a routerLink="/profile" *ngIf="isAuthenticated" class="user-avatar">
+          <img src="{{user.avatar_url}}" alt="">
+        </a>
       </nav>
   </div>
 </header>

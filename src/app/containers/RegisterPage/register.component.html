@@ -1,3 +1,58 @@
-<div class="page-content container">
-  register works!
+<div class="register-form">
+  <h1>Join Assess</h1>
+  <div class="block block-white">
+    <div class="input-wrapper">
+      <div *ngIf="email.errors && (email.dirty || email.touched) && email.errors.required"
+           class="input-error">
+        Please provide email.
+      </div>
+      <input type="text" id="email"
+             placeholder="Email"
+             required
+             [ngClass]="{'error': email.errors && (email.dirty || email.touched) && email.errors.required}"
+             [(ngModel)]="model.email" name="email"
+             #email="ngModel">
+    </div>
+
+    <div class="input-wrapper">
+      <div *ngIf="login.errors && (login.dirty || login.touched) && login.errors.required"
+           class="input-error">
+        Please provide login.
+      </div>
+      <input type="text" id="Login"
+             placeholder="Login"
+             required
+             [ngClass]="{'error': login.errors && (login.dirty || login.touched) && login.errors.required}"
+             [(ngModel)]="model.login" name="login"
+             #login="ngModel">
+    </div>
+
+    <div class="input-wrapper">
+      <div *ngIf="password.errors && (password.dirty || password.touched) && password.errors.required"
+           class="input-error">
+        Please provide password.
+      </div>
+      <input type="password" id="password"
+             placeholder="Password"
+             required
+             [ngClass]="{'error': password.errors && (password.dirty || password.touched) && password.errors.required}"
+             [(ngModel)]="model.password" name="password"
+             #password="ngModel">
+    </div>
+
+    <div class="input-wrapper">
+      <div *ngIf="position.errors && (position.dirty || position.touched) && position.errors.required"
+           class="input-error">
+        Please provide position.
+      </div>
+      <input type="text" id="position"
+             placeholder="You current job position (Software Engineer, Student, Project Manager and etc.)"
+             required
+             [ngClass]="{'error': position.errors && (position.dirty || position.touched) && position.errors.required}"
+             [(ngModel)]="model.position" name="position"
+             #position="ngModel">
+    </div>
+    <app-tag-input (set)="setTag($event)"></app-tag-input>
+  </div>
 </div>
+

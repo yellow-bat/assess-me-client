@@ -30,8 +30,5 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
   }
 
-  ngOnInit() {
-
-    this.userService.isAuthenticated.subscribe(this.authHandler)
-  }
+  ngOnInit() {}
 }

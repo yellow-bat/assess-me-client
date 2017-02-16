@@ -4,10 +4,13 @@ input {
   height: 40px;
   padding: 10px;
   line-height: 20px;
-  margin-bottom: 20px;
   border: 0;
   border-bottom: 1px solid $dark-blue;
   transition: border-color ease-out .25s;
+
+  &.error {
+    border-color: $red;
+  }
 
   &:last-child {
     margin: 0
@@ -16,4 +19,20 @@ input {
   &:focus {
     border-color: $orange-light;
   }
+}
+
+.input-error {
+  font-size: 14px;
+  top: 100%;
+  right: 0;
+  padding-left: 5px;
+  margin-top: -10px;
+  background: $white;
+  color: $red;
+  position: absolute;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+  position: relative;
 }

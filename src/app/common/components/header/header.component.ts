@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
+import {UserService, IAuthenticatedResult} from '../../services/user.service';
 
 
 @Component({
@@ -8,11 +8,12 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public isAuthenticated;
+  public isAuthenticated: boolean;
+  public user: any;
 
   constructor(private userService: UserService) {
-    this.userService.isAuthenticated.subscribe((isAuthenticated: boolean) => {
-      this.isAuthenticated = isAuthenticated;
+    this.userService.authenticatedResult.subscribe((authenticatedResult: IAuthenticatedResult) => {
+      this.isAuthenticated = !authenticatedResult.err && authenticatedResult.result;
     });
   }
 
