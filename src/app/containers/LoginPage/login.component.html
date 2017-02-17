@@ -6,18 +6,20 @@
     <!--Login using Github-->
     <!--</a>-->
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-
+      <div class="as-error" *ngIf="error">
+        {{error}}
+      </div>
       <div class="input-wrapper">
-        <div *ngIf="login.errors && (login.dirty || login.touched) && login.errors.required"
+        <div *ngIf="username.errors && (username.dirty || username.touched) && username.errors.required"
              class="input-error">
           Please provide login.
         </div>
         <input type="text" id="login"
                placeholder="Login"
                required
-               [ngClass]="{'error': login.errors && (login.dirty || login.touched) && login.errors.required}"
-               [(ngModel)]="model.login" name="login"
-               #login="ngModel">
+               [ngClass]="{'error': username.errors && (username.dirty || username.touched) && username.errors.required}"
+               [(ngModel)]="model.username" name="username"
+               #username="ngModel">
       </div>
       <div class="input-wrapper">
         <div *ngIf="password.errors && (password.dirty || password.touched) && password.errors.required"

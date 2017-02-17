@@ -1,3 +1,5 @@
 export default {
-  "server_url": "https://assess-me-server.herokuapp.com"
+  "serverUrl": "https://assess-me-server.herokuapp.com/v1",
+  "authHeaderName": "Authorization",
+  "tokenKeyName": "as-token"
 }

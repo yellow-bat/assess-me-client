@@ -12,6 +12,7 @@ import { RegisterComponent } from './containers/RegisterPage/register.component'
 import { LoginComponent } from './containers/LoginPage/login.component';
 
 import { UserService } from './common/services/user.service';
+import { HttpClientService } from './common/services/httpClient.service';
 import { TagInputComponent } from './common/components/tag-input/tag-input.component';
 
 const appRoutes: Routes = [
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [UserService],
+  providers: [UserService, HttpClientService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }
