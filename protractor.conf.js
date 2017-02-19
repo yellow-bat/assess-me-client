@@ -9,6 +9,10 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  suites: {
+    smoke: "./e2e/**/*.e2e-spec.ts",
+    full: "",
+  },
   capabilities: {
     'browserName': 'chrome'
   },
