@@ -15,6 +15,7 @@ describe('Accessing Home page', function() {
 
       homePage.signInButton.click();
       browser.waitForAngular();
+
       expect(browser.getCurrentUrl()).toContain('/login');
 
     });
@@ -23,6 +24,7 @@ describe('Accessing Home page', function() {
       expect(homePage.header.isPresent);
 
     });
+
     it('Should contain login and password field', function () {
       let loginField = element(by.css("input#login"));
       expect(loginField.isPresent);

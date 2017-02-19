@@ -1,6 +1,11 @@
 import {element, by, browser} from "protractor";
 
+let LoginPage = require('../pages/loginPage');
+let HomePage = require('../pages/homePage');
+
 describe('Accessing Login page', function() {
+  let loginPage = new LoginPage();
+  let homePage = new HomePage();
 
   beforeEach(function () {
     browser.get('https://yellow-bat.github.io/assess-me-client/login');
@@ -10,18 +15,12 @@ describe('Accessing Login page', function() {
   describe('When entering Login And Password', function () {
     it('Should navigate to Main page', function () {
 
-      var loginField = element(by.css("input#login"));
-      var passwordField = element(by.css("input#password"));
-      var loginButton = element(by.css("input.button"));
-
-      loginField.sendKeys("admin");
-      passwordField.sendKeys("password");
-      loginButton.click();
+      loginPage.loginField.sendKeys("admin");
+      loginPage.passwordField.sendKeys("password");
+      loginPage.loginButton.click();
       browser.waitForAngular();
 
-      var text = element(by.css("div.page-content"));
-
-      expect(text.getText()).toMatch('landing works!');
+      expect(homePage.text.getText()).toMatch('landing works!');
 
     });
   });
