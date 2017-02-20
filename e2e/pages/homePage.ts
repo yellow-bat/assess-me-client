@@ -1,7 +1,7 @@
 import { browser, element, by } from 'protractor';
 
-module.exports = function () {
-  this.signInButton = element(by.css("a[routerLink='/login']"));
-  this.header = element(by.css("h1"));
-  this.text = element(by.css("div.page-content"));
+export class HomePage {
+  signInButton = element(by.css("a[routerLink='/login']"));
+  header = element(by.css("h1"));
+  text = element(by.css("div.page-content"));
 };

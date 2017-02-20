@@ -1,7 +1,6 @@
 import {element, by, browser} from "protractor";
-
-let LoginPage = require('../pages/loginPage');
-let HomePage = require('../pages/homePage');
+import {LoginPage} from "../pages/loginPage";
+import {HomePage} from "../pages/homePage";
 
 describe('Accessing Login page', function() {
   let loginPage = new LoginPage();

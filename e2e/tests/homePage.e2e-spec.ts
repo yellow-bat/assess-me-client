@@ -1,7 +1,6 @@
 import { AssessMeClientPage } from '../pages/app.po';
 import {element, by, browser} from "protractor";
-
-let HomePage = require('../pages/homePage');
+import {HomePage} from "../pages/homePage";
 
 describe('Accessing Home page', function() {
   let homePage = new HomePage();
