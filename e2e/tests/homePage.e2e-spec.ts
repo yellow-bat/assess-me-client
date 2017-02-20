@@ -6,32 +6,17 @@ describe('Accessing Home page', function() {
   let homePage = new HomePage();
 
   beforeEach(function () {
-    browser.get('https://yellow-bat.github.io/assess-me-client/');
-
-  });
-  describe('When clicking on Sign in button', function() {
-    it('Should navigate to Login page', function () {
-
-      homePage.signInButton.click();
-      browser.waitForAngular();
-
-      expect(browser.getCurrentUrl()).toContain('/login');
-
-    });
-
-    it('Should contain a Header', function () {
-      expect(homePage.header.isPresent);
-
-    });
-
-    it('Should contain login and password field', function () {
-      let loginField = element(by.css("input#login"));
-      expect(loginField.isPresent);
-
-    });
+    homePage.navigateTo();
   });
 
+  describe('When visiting Home Page', function() {
+    it('Should contain all necessary fields', function () {
+      expect(homePage.signInButton.isPresent());
+      expect(homePage.registerButton.isPresent);
+      expect(homePage.logo.isPresent);
+      expect(homePage.text.getText()).toEqual("landing works!");
+    });
+  });
 });
-
 
 
