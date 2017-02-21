@@ -9,11 +9,15 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  suites: {
+    smoke: "./e2e/**/*.e2e-spec.ts",
+    full: "",
+  },
   capabilities: {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'https://yellow-bat.github.io/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -28,5 +32,6 @@ exports.config = {
   },
   onPrepare: function() {
     jasmine.getEnv().addReporter(new SpecReporter());
+    browser.driver.manage().window().setSize(1280, 720);
   }
 };

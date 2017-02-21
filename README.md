@@ -21,6 +21,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+You are also able to run them by 'protractor protractor.conf.js'
+In case you need to specify whether you want 'smoke' or 'full' suite, please use the following command 'protractor protractor.conf.js --suite=smoke'
 
 ## Deploying to GitHub Pages
 
