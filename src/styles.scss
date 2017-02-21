@@ -11,7 +11,8 @@
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font;
+  font-size: 16px;
   background: $global-background-color;
 }
 
@@ -40,7 +41,7 @@ a:hover {
 .block {
   border: 1px solid $dark-blue;
   display: block;
-  padding: 20px;
+  padding: 1.5rem;
 }
 
 .block-white {
