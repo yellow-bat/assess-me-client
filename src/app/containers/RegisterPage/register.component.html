@@ -46,7 +46,7 @@
         Please provide position.
       </div>
       <input type="text" id="position"
-             placeholder="You current job position (Software Engineer, Student, Project Manager and etc.)"
+             placeholder="You current job position"
              required
              [ngClass]="{'error': position.errors && (position.dirty || position.touched) && position.errors.required}"
              [(ngModel)]="model.position" name="position"

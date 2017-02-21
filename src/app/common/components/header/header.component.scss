@@ -10,27 +10,22 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-}
 
-.logo {
-  color: $gray-border-color;
-  font-size: 22px;
-  font-weight: bold;
-
-  span {
-    color: $orange-light;
+  h1 {
+    margin: 0;
+    font-weight: lighter;
+    a {
+      color: $gray-border-color;
+    }
   }
 }
-
-
 
 nav a {
   margin: 0 5px;
   display: inline-block;
   vertical-align: middle;
-  padding: 10px;
+  padding: .625rem 1.5rem;
   border: 1px solid $dark-gray;
-  font-size: .8rem;
   color: $global-background-color;
   transition: border-color ease-in-out .25s;
 
