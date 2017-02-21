@@ -8,9 +8,8 @@ export class LoginPage {
   loginButton = element(by.css("input.button"));
   header = element(by.css("h1"));
 
-
   //Methods
-  navigateToLogin() {
+  navigateTo() {
     return browser.get('assess-me-client/login');
   }
 
@@ -21,5 +20,4 @@ export class LoginPage {
   enterUserName(name) {
     return this.loginField.sendKeys(name);
   }
-
-};
+}

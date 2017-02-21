@@ -3,13 +3,13 @@ import {LoginPage} from "../pages/loginPage";
 import {HomePage} from "../pages/homePage";
 
 describe('Accessing Login page', () => {
-  let loginPage = new LoginPage();
-  let homePage = new HomePage();
+  const loginPage = new LoginPage();
+  const homePage = new HomePage();
 
   describe('When visiting Login Page', () => {
 
     beforeAll(() => {
-      loginPage.navigateToLogin();
+      loginPage.navigateTo();
     });
 
     it('Header should be visible', () => {
@@ -30,7 +30,10 @@ describe('Accessing Login page', () => {
   });
 
   describe('Authentication using valid credentials', () => {
-    loginPage.navigateToLogin();
+    beforeAll(() => {
+      loginPage.navigateTo();
+    });
+
     it('When I enter Username', () => {
       loginPage.enterUserName("admin");
     });
@@ -40,16 +43,16 @@ describe('Accessing Login page', () => {
     });
 
     it('When I click Login button', () => {
-
       loginPage.loginButton.click();
       browser.waitForAngular();
     });
 
     it('I should be on Home page', () => {
-
       expect(browser.getCurrentUrl()).toMatch("https://yellow-bat.github.io/assess-me-client/");
-      expect(homePage.getWelcomeText()).toMatch('landing works!');
+    });
 
+    it('Welcome text should be visible', () => {
+      expect(homePage.getWelcomeText()).toMatch('landing works!');
     });
   });
 });

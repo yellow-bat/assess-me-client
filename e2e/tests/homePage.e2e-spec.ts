@@ -1,13 +1,11 @@
 import {HomePage} from "../pages/homePage";
 
 describe('Accessing Home page',() => {
-  let homePage = new HomePage();
-
-
+  const homePage = new HomePage();
 
   describe('When visiting Home Page', () => {
     beforeAll(() => {
-      homePage.navigateToHome();
+      homePage.navigateTo();
     });
 
     it('Should contain sign In button', () => {

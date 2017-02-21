@@ -8,15 +8,12 @@ export class HomePage {
   welcomeText = element(by.css("div.page-content.container"));
   logo = element(by.css("a.logo"));
 
-
-
   //Methods
-  navigateToHome() {
+  navigateTo() {
     return browser.get('assess-me-client/');
   }
 
   getWelcomeText() {
     return this.welcomeText.getText();
   }
-
-};
+}
