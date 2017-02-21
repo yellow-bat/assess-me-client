@@ -1,6 +1,7 @@
 import {element, by, browser} from "protractor";
 import {LoginPage} from "../pages/loginPage";
 import {HomePage} from "../pages/homePage";
+import Const from "../const";
 
 describe('Accessing Login page', () => {
   const loginPage = new LoginPage();
@@ -14,19 +15,19 @@ describe('Accessing Login page', () => {
 
     it('Header should be visible', () => {
       expect(loginPage.header.getText()).toMatch("Sign in to Assess");
-      });
+    });
 
     it('Login field should be visible', () => {
       loginPage.loginField.isPresent();
-      });
+    });
 
     it('Password field should be visible', () => {
       loginPage.passwordField.isPresent();
-      });
+    });
 
     it('Login Button should be visible', () => {
       loginPage.loginButton.isPresent();
-      });
+    });
   });
 
   describe('Authentication using valid credentials', () => {
@@ -48,7 +49,7 @@ describe('Accessing Login page', () => {
     });
 
     it('I should be on Home page', () => {
-      expect(browser.getCurrentUrl()).toMatch("https://yellow-bat.github.io/assess-me-client/");
+      expect(browser.getCurrentUrl()).toMatch(Const.baseUrl);
     });
 
     it('Welcome text should be visible', () => {
