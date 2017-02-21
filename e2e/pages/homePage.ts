@@ -1,13 +1,22 @@
 import { browser, element, by } from 'protractor';
 
 export class HomePage {
+
+  //Elements
   signInButton = element(by.css("a[routerLink='/login']"));
   registerButton = element(by.css("a[routerLink='/register']"));
-  text = element(by.css("div.page-content"));
+  welcomeText = element(by.css("div.page-content.container"));
   logo = element(by.css("a.logo"));
 
-  navigateTo() {
+
+
+  //Methods
+  navigateToHome() {
     return browser.get('assess-me-client/');
+  }
+
+  getWelcomeText() {
+    return this.welcomeText.getText();
   }
 
 };

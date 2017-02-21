@@ -1,20 +1,26 @@
-import { AssessMeClientPage } from '../pages/app.po';
-import {element, by, browser} from "protractor";
 import {HomePage} from "../pages/homePage";
 
 describe('Accessing Home page', function() {
   let homePage = new HomePage();
 
-  beforeEach(function () {
-    homePage.navigateTo();
-  });
-
   describe('When visiting Home Page', function() {
-    it('Should contain all necessary fields', function () {
+    homePage.navigateToHome();
+
+
+    it('Should contain sign In button', function () {
       expect(homePage.signInButton.isPresent());
+    });
+
+    it('Should contain register button', function () {
       expect(homePage.registerButton.isPresent);
-      expect(homePage.logo.isPresent);
-      expect(homePage.text.getText()).toEqual("landing works!");
+    });
+
+    it('Should contain Logo', function () {
+      expect(homePage.logo.isPresent());
+    });
+
+    it('Should contain Welcome Text', function () {
+      expect(homePage.getWelcomeText()).toMatch('landing works!');
     });
   });
 });

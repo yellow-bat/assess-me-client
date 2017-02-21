@@ -6,30 +6,45 @@ describe('Accessing Login page', function() {
   let loginPage = new LoginPage();
   let homePage = new HomePage();
 
-  beforeEach(function () {
-    loginPage.navigateTo();
-
-  });
-
   describe('When visiting Login Page', function () {
-    it('Should contain all necessary field', function () {
+    loginPage.navigateToLogin();
+    it('Header should be visible', function () {
       expect(loginPage.header.getText()).toMatch("Sign in to Assess");
+      });
 
-      loginPage.loginButton.isPresent();
+    it('Login field should be visible', function () {
+      loginPage.loginField.isPresent();
+      });
+
+    it('Password field should be visible', function () {
       loginPage.passwordField.isPresent();
-      loginPage.loginButton.isPresent();
+      });
 
-    });
+    it('Login Button should be visible', function () {
+      loginPage.loginButton.isPresent();
+      });
   });
 
   describe('Authentication using valid credentials', function () {
-    it('Home page should be opened', function () {
-      loginPage.loginField.sendKeys("admin");
-      loginPage.passwordField.sendKeys("password");
+    loginPage.navigateToLogin();
+    it('When I enter Username', function () {
+      loginPage.enterUserName("admin");
+    });
+
+    it('When I enter password', function () {
+      loginPage.enterPassword('password');
+    });
+
+    it('When I click Login button', function () {
+
       loginPage.loginButton.click();
       browser.waitForAngular();
+    });
+
+    it('I should be on Home page', function () {
+
       expect(browser.getCurrentUrl()).toMatch("https://yellow-bat.github.io/assess-me-client/");
-      expect(homePage.text.getText()).toMatch('landing works!');
+      expect(homePage.getWelcomeText()).toMatch('landing works!');
 
     });
   });
