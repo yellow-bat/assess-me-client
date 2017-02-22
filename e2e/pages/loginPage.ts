@@ -20,4 +20,8 @@ export class LoginPage {
   enterUserName(name) {
     return this.loginField.sendKeys(name);
   }
+
+  getHeaderText() {
+    return this.header.getText();
+  }
 }

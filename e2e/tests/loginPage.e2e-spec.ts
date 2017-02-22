@@ -14,7 +14,7 @@ describe('Accessing Login page', () => {
     });
 
     it('Header should be visible', () => {
-      expect(loginPage.header.getText()).toMatch("Sign in to Assess");
+      expect(loginPage.getHeaderText()).toMatch("Sign in to Assess");
     });
 
     it('Login field should be visible', () => {

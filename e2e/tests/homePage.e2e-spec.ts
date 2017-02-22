@@ -21,7 +21,6 @@ describe('Accessing Home page',() => {
     });
 
     it('Should contain Welcome Text', () =>  {
-
       expect(homePage.getWelcomeText()).toMatch('landing works!');
     });
   });

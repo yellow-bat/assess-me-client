@@ -11,7 +11,7 @@ describe('Accessing Registration page', () => {
 
     it('Header should be visible', () => {
       registrationPage.header.isDisplayed();
-      expect(registrationPage.header.getText()).toMatch("Join Asses");
+      expect(registrationPage.getHeaderText()).toMatch("Join Asses");
     });
 
     it('Email field should be visible', () => {
@@ -30,5 +30,8 @@ describe('Accessing Registration page', () => {
       registrationPage.positionField.isDisplayed();
     });
 
+    it('Placeholder of login field is visible', () => {
+      expect(registrationPage.getLoginPlaceholder()).toMatch("Login");
+    });
   });
 });

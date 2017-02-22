@@ -15,8 +15,11 @@ export class RegistrationPage {
     return browser.get('assess-me-client/register');
   }
 
-  enterPassword(name) {
-    return this.passwordField.sendKeys(name);
+  getHeaderText() {
+    return this.header.getText();
   }
 
+  getLoginPlaceholder() {
+    return this.loginField.getAttribute('placeholder');
+  }
 }
