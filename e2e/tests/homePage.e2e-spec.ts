@@ -1,11 +1,13 @@
 import {HomePage} from "../pages/homePage";
 import {LoginPage} from "../pages/loginPage";
+import {Toolbar} from "../pages/toolbar";
 import {element, by, browser} from "protractor";
 import Const from "../const";
 
 describe('Accessing Home page',() => {
   const homePage = new HomePage();
   const loginPage = new LoginPage();
+  const toolbar = new Toolbar();
 
   describe('When visiting Home Page', () => {
     beforeAll(() => {
@@ -13,15 +15,15 @@ describe('Accessing Home page',() => {
     });
 
     it('Should contain sign In button', () => {
-      expect(homePage.signInButton.isPresent());
+      expect(toolbar.signInButton.isPresent());
     });
 
     it('Should contain register button', () => {
-      expect(homePage.registerButton.isPresent);
+      expect(toolbar.registerButton.isPresent);
     });
 
     it('Should contain Logo', () => {
-      expect(homePage.logo.isPresent());
+      expect(toolbar.logo.isPresent());
     });
 
     it('Should contain Welcome Text', () =>  {
@@ -35,7 +37,7 @@ describe('Accessing Home page',() => {
     });
 
     it('When I click Home button', () => {
-      homePage.logo.click();
+      toolbar.logo.click();
     });
 
     it('Should return to Home page', () => {
