@@ -1,7 +1,7 @@
 import {HomePage} from "../pages/homePage";
 import {LoginPage} from "../pages/loginPage";
-import {Toolbar} from "../pages/toolbar";
-import {element, by, browser} from "protractor";
+import {Toolbar} from "../pages/common/toolbar";
+import {browser} from "protractor";
 import Const from "../const";
 
 describe('Accessing Home page',() => {

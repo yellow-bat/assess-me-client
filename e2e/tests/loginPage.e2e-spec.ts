@@ -1,4 +1,4 @@
-import {element, by, browser} from "protractor";
+import {browser} from "protractor";
 import {LoginPage} from "../pages/loginPage";
 import {HomePage} from "../pages/homePage";
 import Const from "../const";
