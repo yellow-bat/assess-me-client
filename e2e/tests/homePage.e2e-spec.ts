@@ -1,7 +1,11 @@
 import {HomePage} from "../pages/homePage";
+import {LoginPage} from "../pages/loginPage";
+import {element, by, browser} from "protractor";
+import Const from "../const";
 
 describe('Accessing Home page',() => {
   const homePage = new HomePage();
+  const loginPage = new LoginPage();
 
   describe('When visiting Home Page', () => {
     beforeAll(() => {
@@ -22,6 +26,20 @@ describe('Accessing Home page',() => {
 
     it('Should contain Welcome Text', () =>  {
       expect(homePage.getWelcomeText()).toMatch('landing works!');
+    });
+  });
+
+  describe('Checking the Home button', () => {
+    it('When I navigate to Login page', () => {
+      loginPage.navigateTo();
+    });
+
+    it('When I click Home button', () => {
+      homePage.logo.click();
+    });
+
+    it('Should return to Home page', () => {
+      expect(browser.getCurrentUrl()).toMatch(Const.baseUrl);
     });
   });
 });

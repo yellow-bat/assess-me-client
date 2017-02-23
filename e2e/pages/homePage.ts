@@ -6,7 +6,7 @@ export class HomePage {
   signInButton = element(by.css("a[routerLink='/login']"));
   registerButton = element(by.css("a[routerLink='/register']"));
   welcomeText = element(by.css("div.page-content.container"));
-  logo = element(by.css("a.logo"));
+  logo = element(by.css("a[routerLink='/']"));
 
   //Methods
   navigateTo() {

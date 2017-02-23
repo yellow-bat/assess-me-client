@@ -56,5 +56,29 @@ describe('Accessing Login page', () => {
       expect(homePage.getWelcomeText()).toMatch('landing works!');
     });
   });
+
+  describe('Authentication using invalid credentials', () => {
+    beforeAll(() => {
+      loginPage.navigateTo();
+    });
+
+    it('When I enter invalid Username', () => {
+      loginPage.enterUserName("test");
+    });
+
+    it('When I enter invalid password', () => {
+      loginPage.enterPassword('test');
+    });
+
+    it('When I click Login button', () => {
+      loginPage.loginButton.click();
+      browser.waitForAngular();
+    });
+
+    it('Error message should be displayed', () => {
+      expect(loginPage.errorMessage.isDisplayed());
+      expect(loginPage.getErrorText()).toMatch("Invalid username or password.");
+    });
+  });
 });
 
